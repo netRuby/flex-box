@@ -1,0 +1,208 @@
+// Define flex columns
+
+$flex-columns: 24;
+
+
+// Define mixin flex clearfix
+
+@mixin flex-clearfix{
+
+    &:before,
+    &:after{
+        display: flex;
+        content: "";
+        width: 0;
+        height: 0;
+        box-sizing: border-box;
+        font-size: 0;
+    }
+
+    &:after{
+        clear: both;
+    }
+}
+
+@mixin build-flex-item($i){
+
+    @if($i > 0){
+        .flex-item-#{$i}{
+            width: percentage($i / $flex-columns);
+        }
+
+        .flex-offset-#{$i}{
+            margin-left: percentage($i / $flex-columns);
+        }
+
+        .flex-order-#{$i}{
+            order: $i;
+        }
+
+        @include build-flex-item($i - 1);
+    }  
+}
+
+@mixin build-flex-align($type){
+
+    @if($type == row){
+        &.flex-left{
+            align-items: flex-start;
+        }
+
+        &.flex-right{
+            align-items: flex-end;
+        }
+
+        &.flex-center{
+            align-items: center;
+        }
+
+        &.flex-top{
+            justify-content: flex-start;
+        }
+
+        &.flex-bottom{
+            justify-content: flex-end;
+        }
+
+        &.flex-middle{
+            justify-content: center;
+        }
+    }
+
+    @if($type == column){
+        &.flex-left{
+            justify-content: flex-start;
+        }
+
+        &.flex-right{
+            justify-content: flex-end;
+        }
+
+        &.flex-center{
+            justify-content: center;
+        }
+
+        &.flex-top{
+            align-items: flex-start;
+        }
+
+        &.flex-bottom{
+            align-items: flex-end;
+        }
+
+        &.flex-middle{
+            align-items: center;
+        }
+    }
+}
+
+// Define mixin flex classes
+
+.flex-column,
+.flex-row{
+    display: flex;
+    flex-wrap: wrap;
+    @include flex-clearfix;
+}
+
+.flex-column{
+    @include build-flex-align(column);
+    flex-direction: row;
+}
+
+.flex-row{
+    @include build-flex-align(row);
+    flex-direction: column;
+}
+
+.flex-around{
+    justify-content: space-around;
+}
+
+.flex-between{
+    justify-content: space-between;
+}
+
+.flex-baseline{
+    align-items: baseline;
+}
+
+.flex-stretch{
+    align-items: stretch;
+}
+
+.flex-item{
+    flex-grow: 1;
+}
+
+@include build-flex-item($flex-columns);
+
+[class*=flex-item]{
+    &.flex-left{
+        margin-right: auto;
+    }
+
+    &.flex-right{
+        margin-left: auto;
+    }
+
+    &.flex-top{
+        margin-bottom: auto;
+    }
+
+    &.flex-bottom{
+        margin-top: auto;
+    }
+
+    &.flex-center{
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &.flex-middle{
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+}
+
+
+// Define Responsive
+
+.flex-show-on-sm,
+.flex-show-on-md{
+    display: none;
+}
+
+@media screen and (max-width: 992px){
+    .flex-md{
+        flex-direction: column;
+        @include build-flex-align(row);
+
+        [class*=flex-item]{
+            width: 100%;
+        }
+    }
+    .flex-hide-on-md{
+        display: none !important;
+    }
+    .flex-show-on-md{
+        display: flex !important;
+    }
+}
+
+@media screen and (max-width:768px){
+    .flex-sm{
+        flex-direction: column;
+        @include build-flex-align(row);
+
+        [class*=flex-item]{
+            width: 100%;
+        }
+    }
+    .flex-hide-on-sm{
+        display: none !important;
+    }
+    .flex-show-on-sm{
+        display: flex !important;
+    }
+}

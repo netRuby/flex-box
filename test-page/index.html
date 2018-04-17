@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test page</title>
+    <link rel="stylesheet" href="../dist/flex-box.css">
+    <style>
+        div{
+            text-align: center;
+        }
+
+        div > div:nth-child(2n){
+            background: rgb(126, 98, 177);
+        }
+
+        div > div:nth-child(2n+1){
+            background: #b6ac25;
+        }
+    </style>
+</head>
+<body>
+    <h4>1.</h4>
+
+    <div class="flex-column">
+        <div class="flex-item-24">24</div>
+        <div class="flex-item-12">12</div>
+        <div class="flex-item-12">12</div>
+        <div class="flex-item-8">8</div>
+        <div class="flex-item">自动宽度</div>
+        <div class="flex-item-9">9</div>
+        <div class="flex-item-8">8</div>
+        <div class="flex-item-8 flex-offset-4">8</div>
+    </div>
+
+    <h4>2.</h4>
+
+    <div class="flex-row flex-middle flex-center" style="height:100px;">
+        <div class="flex-column flex-item-2">1</div>
+        <div class="flex-column flex-item-2">2</div>
+    </div>
+
+    <h4>3.</h4>
+
+    <div class="flex-row">
+        <div class="flex-item-8">8</div>
+        <div class="flex-item-8 flex-offset-8">8</div>
+        <div class="flex-item-8 flex-offset-16">8</div>
+    </div>
+
+    <h4>4.</h4>
+
+    <div class="flex-column">
+        <div class="flex-item-6 flex-order-1">1</div>
+        <div class="flex-item-6 flex-order-2">2</div>
+        <div class="flex-item-6 flex-order-3">3</div>
+        <div class="flex-item-6 flex-order-4">4</div>
+    </div>
+
+    <h4>5.</h4>
+    
+    <div class="flex-column flex-right">
+        <div class="flex-item-4">4</div>
+        <div class="flex-item-4">4</div>
+        <div class="flex-item-4">4</div>
+    </div>
+
+    <div class="flex-column flex-left">
+        <div class="flex-item-4">4</div>
+        <div class="flex-item-4">4</div>
+        <div class="flex-item-4">4</div>
+    </div>
+
+    <div class="flex-row flex-right">
+        <div class="flex-item-4">4</div>
+        <div class="flex-item-4">4</div>
+        <div class="flex-item-4">4</div>
+    </div>
+
+    <div class="flex-row flex-left">
+        <div class="flex-item-4">4</div>
+        <div class="flex-item-4">4</div>
+        <div class="flex-item-4">4</div>
+    </div>
+
+    <h4>6.</h4>
+    
+    <div class="flex-column flex-top" style="height:100px;">
+        <div class="flex-item-4">4</div>
+        <div class="flex-item-4">4</div>
+        <div class="flex-item-4">4</div>
+    </div>
+    <div class="flex-column flex-bottom" style="height:100px;">
+        <div class="flex-item-4">4</div>
+        <div class="flex-item-4">4</div>
+        <div class="flex-item-4">4</div>
+    </div>
+    <div class="flex-row flex-top" style="height:100px;">
+        <div class="flex-item-4">4</div>
+        <div class="flex-item-4">4</div>
+        <div class="flex-item-4">4</div>
+    </div>
+    <div class="flex-row flex-bottom" style="height:100px;">
+        <div class="flex-item-4">4</div>
+        <div class="flex-item-4">4</div>
+        <div class="flex-item-4">4</div>
+    </div>
+
+    <h4>7.</h4>
+
+    <div class="flex-column flex-between">
+        <div class="flex-item-4">4</div>
+        <div class="flex-item-4">4</div>
+        <div class="flex-item-4">4</div>
+    </div>
+
+    <div class="flex-row flex-between" style="height:100px;">
+        <div class="flex-item-4">4</div>
+        <div class="flex-item-4">4</div>
+        <div class="flex-item-4">4</div>
+    </div>
+
+    <h4>8.</h4>
+
+    <div class="flex-column">
+        <div class="flex-item-16 flex-row">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+        </div>
+        <div class="flex-item-8 flex-row">
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+    </div>
+
+    <h4>9.</h4>
+    
+    <div class="flex-column flex-md">
+        <div class="flex-item flex-show-on-md">1</div>
+        <div class="flex-item flex-hide-on-md">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+    </div>
+
+    <h4>10.</h4>
+
+    <div class="flex-row">
+        <div class="flex-item-24">header</div>
+        <div class="flex-column">
+            <div class="flex-item-4">side-left</div>
+            <div class="flex-item">main</div>
+            <div class="flex-item-4">side-right</div>
+        </div>
+        <div class="flex-item-24">footer</div>
+    </div>
+
+    <div class="flex-column">
+        <div class="flex-item-8"></div>
+        <div class="flex-item">
+            <pre>
+                 123456789
+                 123456789
+                 123456789
+                 123456789
+                 123456789
+                 123456789
+            </pre>
+        </div>
+    </div>
+</body>
+</html>

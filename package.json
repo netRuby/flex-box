@@ -1,0 +1,19 @@
+{
+  "name": "flex-box",
+  "version": "1.0.0",
+  "description": "a common flex box ",
+  "main": "./src/flex-box.scss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "flex-box"
+  ],
+  "author": "netroby",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-sass": "^4.0.1"
+  }
+}
